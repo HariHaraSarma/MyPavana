@@ -28,7 +28,7 @@ class DealersInfo(models.Model):
 	tin = models.CharField(max_length=15, unique=True)
 
 	def __unicode__(self):
-		return unicode(self.dealer.first_name + self.dealer.last_name)
+		return unicode(self.person_info.first_name + self.person_info.last_name)
 
 
 class ComplteStockDetails(models.Model):
