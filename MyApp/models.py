@@ -21,7 +21,7 @@ class Person(models.Model):
 
 
 class DealersInfo(models.Model):
-	dealer = models.ForeignKey(Person) 
+	person_info = models.ForeignKey(Person) 
 	company_name = models.CharField(max_length=50)
 	dl1 = models.CharField(max_length=15, unique=True)
 	dl2 = models.CharField(max_length=15, unique=True)
@@ -36,8 +36,8 @@ class ComplteStockDetails(models.Model):
     item_name = models.CharField(max_length=50, unique=True)
     company = models.CharField(max_length=30)
     price_per_unit = models.FloatField()
-    manf_data = models.CharField(max_length=10)
-    exp_data = models.CharField(max_length=10)
+    manf_date = models.CharField(max_length=10)
+    exp_date = models.CharField(max_length=10)
     quantity = models.IntegerField()
     dealer = models.ForeignKey(DealersInfo)
     comments = models.CharField(max_length=100)
