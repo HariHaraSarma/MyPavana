@@ -1,2 +1,2 @@
 # MyPavana
-This application for handling the Sock and Dealers
+This application for handling the Stock and Dealers
