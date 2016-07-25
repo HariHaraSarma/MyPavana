@@ -43,4 +43,5 @@ class ComplteStockDetails(models.Model):
     comments = models.CharField(max_length=100)
 
     def __unicode__(self):
-        return unicode(self.batch_num)
+	# changed return statement.
+        return unicode(self.company)
