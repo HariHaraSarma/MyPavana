@@ -16,7 +16,14 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
+from MyApp import views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    #url(r'^$', views.post_list, name='post_list'),
+    #url(r'^post/(?P<pk>\d+)/$', views.post_detail, name='post_detail'),
+    url(r'^person/new/$', views.post_new, name='person_new'),
+    url(r'^dealer/new/$', views.dealer_new, name='dealer_new'),
+    url(r'^stock/new/$', views.stock_new, name='dealer_new'),
+
 ]
