@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %} {{'Person List'}} {% endblock title %}
+
+{% block heading %} 
+   
+   <div>
+    
+        <a href="/dealer/new/" class="btn btn-primary btn-sm">Add Dealer Details</a>
+        <a href="/dealer/list/" class="btn btn-primary btn-sm">View Dealer Details</a>
+
+    </div>
+
+ {% endblock heading %}
+  
+{% block content %}
+
+
+        <table id="example" class="display nowrap" cellspacing="0" width="100%">
+        <thead>
+   <tr>
+    <th>ID</th>
+    <th>Person</th>
+    <th>Company Name</th>
+    <th>Dealer 1</th>
+    <th>Dealer 2</th>
+    <th>TIN No.</th>
+    
+  </tr>
+  </thead>
+  
+ <tbody>
+{% for obj in  dealer_list %}
+ 
+  <tr>
+    <td>{{obj.id}}</td>
+    <td>{{obj.person_info}}</td>
+    <td>{{obj.company_name}}</td>
+    <td>{{obj.dl1}}</td>
+    <td>{{obj.dl2}}</td>
+    <td>{{obj.tin}}</td>
+    
+  </tr>
+         
+    {% endfor %}</br>
+    </tbody> 
+  </table>
+
+     
+
+{% endblock content %}
+
+
+</table>

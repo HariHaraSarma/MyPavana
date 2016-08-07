@@ -1,22 +1,32 @@
 {% extends 'base.html' %}
 {% load crispy_forms_tags %}
 
-{% block content %}
-<div class="jumbotron">
-    <h1>Person Registration </h1>
-    <div class="row">
-  
-  <div class="col-sm-6">
+{% block title %} {{'Person List'}} {% endblock title %}
 
-    <form method="POST" class="form-horizontal">{% csrf_token %}
-    	<div class="form-group">
-        {{ form|crispy }}
-        <button type="submit" class="save btn btn-default">Save</button>
+  {% block heading %} 
+  
+   
+   	<div>
+    
+        <a href="/person/new/" class="btn btn-primary btn-sm">Add Person Details</a>
+        <a href="/person/list/" class="btn btn-primary btn-sm">View Person Details</a>
+
+    </div>
+        
+      
+
+ {% endblock heading %}
+
+
+{% block content %}
+
+ <form method="POST" class="form-horizontal">{% csrf_token %}
+    	
+    		{{ form|crispy }}
+        <button type="submit" class="btn btn-primary btn-lg">Save</button>
     </form>
-</div>
-</div>
-</div>
 
 {% endblock %}
 
 
+  

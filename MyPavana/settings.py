@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     # My Applicatios
     'MyApp',
 ]
-CRISPY_TEMPLATE_PACK='bootstrap3'
+
 MIDDLEWARE_CLASSES = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -125,4 +125,11 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+CRISPY_TEMPLATE_PACK='bootstrap3'
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static")
+]
+STATIC_ROOT = os.path.join(BASE_DIR, 'static_cdn')
+
+

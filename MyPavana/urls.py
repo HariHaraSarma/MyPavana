@@ -17,13 +17,22 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 from MyApp import views
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     #url(r'^$', views.post_list, name='post_list'),
     #url(r'^post/(?P<pk>\d+)/$', views.post_detail, name='post_detail'),
-    url(r'^$', views.post_new, name='person_new'),
+    url(r'^$', views.person_new, name='person_new'),
+    url(r'^person/new/$', views.person_new, name='person_new'),
+    url(r'^person/list/$', views.person_list, name='person_list'),
     url(r'^dealer/new/$', views.dealer_new, name='dealer_new'),
-    url(r'^stock/new/$', views.stock_new, name='dealer_new'),
+    url(r'^dealer/list/$', views.dealer_list, name='dealer_list'),
+    url(r'^stock/new/$', views.stock_new, name='stock_new'),
+    url(r'^stock/list/$', views.stock_list, name='stock_list'),
 
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

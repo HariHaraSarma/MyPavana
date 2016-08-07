@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %} {{'Person List'}} {% endblock title %}
+
+{% block heading %} 
+   
+   <div>
+    
+        <a href="/stock/new/" class="btn btn-primary btn-sm">Add Stock Details</a>
+        <a href="/stock/list/" class="btn btn-primary btn-sm">View Stock Details</a>
+
+    </div>
+
+ {% endblock heading %}
+  
+{% block content %}
+
+
+        <table id="example" class="display nowrap" cellspacing="0" width="100%">
+        <thead>
+   <tr>
+    <th>ID</th>
+    <th>Batch No.</th>
+    <th>Item Name</th>
+    <th>Company Name</th>
+    <th>Price P/U</th>
+    <th>Manf. Date</th>
+    <th>Exp. Date</th>
+    <th>Quantity</th>
+    <th>Dealer</th>
+    <th>Comments</th>
+  </tr>
+  </thead>
+  
+ <tbody>
+{% for obj in  stock_list %}
+ 
+  <tr>
+    <td>{{obj.id}}</td>
+    <td>{{obj.batch_num}}</td>
+    <td>{{obj.item_name}}</td>
+    <td>{{obj.company}}</td>
+    <td>{{obj.price_per_unit}}</td>
+    <td>{{obj.manf_date}}</td>
+    <td>{{obj.exp_date}}</td>
+    <td>{{obj.quantity}}</td>
+    <td>{{obj.dealer}}</td>
+    <td>{{obj.comments}}</td>
+  </tr>
+         
+    {% endfor %}</br>
+    </tbody> 
+  </table>
+
+     
+
+{% endblock content %}
+
+
+</table>

@@ -1,0 +1,1 @@
+$(document).ready(function(){$("#example").DataTable({scrollY:200,scrollX:!0})});

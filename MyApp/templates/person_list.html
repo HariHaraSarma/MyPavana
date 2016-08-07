@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %} {{'Person List'}} {% endblock title %}
+
+{% block heading %} 
+   
+   <div>
+    
+         <a href="/person/new/" class="btn btn-primary btn-sm">Add Person Details</a>
+        <a href="/person/list/" class="btn btn-primary btn-sm">View Person Details</a>
+
+    </div>
+
+ {% endblock heading %}
+  
+{% block content %}
+
+
+        <table id="example" class="display nowrap" cellspacing="0" width="100%">
+        <thead>
+   <tr>
+    <th>ID</th>
+    <th>User</th>
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>Age</th>
+    <th>Email ID</th>
+    <th>DOB</th>
+    <th>Date Created</th>
+    <th>Phone</th>
+    <th>Address</th>
+  </tr>
+  </thead>
+  
+ <tbody>
+{% for obj in  person_list %}
+ 
+  <tr>
+    <td>{{obj.id}}</td>
+    <td>{{obj.user}}</td>
+    <td>{{obj.first_name}}</td>
+    <td>{{obj.last_name}}</td>
+    <td>{{obj.age}}</td>
+    <td>{{obj.email_id}}</td>
+    <td>{{obj.dob}}</td>
+    <td>{{obj.date_created}}</td>
+    <td>{{obj.phone}}</td>
+    <td>{{obj.address}}</td>
+  </tr>
+         
+    {% endfor %}</br>
+    </tbody> 
+  </table>
+
+     
+
+{% endblock content %}
+
+
+</table>

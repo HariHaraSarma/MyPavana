@@ -1,20 +1,32 @@
 {% extends 'base.html' %}
 {% load crispy_forms_tags %}
 
+
+
+  {% block title %} {{'Stock'}} {% endblock title %}
+  {% block heading %} 
+<div>
+    
+        <a href="/stock/new/" class="btn btn-primary btn-sm">Add Stock Details</a>
+        <a href="/stock/list/" class="btn btn-primary btn-sm">View Stock Details</a>
+
+    </div>
+
+
+
+   {% endblock heading %}
 {% block content %}
-    <h1>Add Stock</h1>
-    <div class="row">
-  
-  <div class="col-sm-6">
-
     <form method="POST" class="form-horizontal">{% csrf_token %}
-    	<div class="form-group">
-        {{ form|crispy }}
-        <button type="submit" class="save btn btn-default">Save</button>
-    </form>
-</div>
-</div>
+    	
+    		
 
-{% endblock %}
+        	{{ form|crispy }}
+        <button type="submit" class="btn btn-primary btn-lg">Save</button>
+    </form>
+
+
+    
+
+{% endblock content %}
 
 

@@ -1,20 +1,33 @@
 {% extends 'base.html' %}
 {% load crispy_forms_tags %}
 
+{% block title %} {{'Dealer'}} {% endblock title %}
+  {% block heading %}  
+
+<div>
+    
+        <a href="/dealer/new/" class="btn btn-primary btn-sm">Add Dealer Details</a>
+        <a href="/dealer/list/" class="btn btn-primary btn-sm">View Dealer Details</a>
+
+    </div>
+
+  {% endblock heading %}
+
 {% block content %}
-    <h1>Dealer Registration </h1>
-    <div class="row">
+
   
-  <div class="col-sm-6">
+  	
 
     <form method="POST" class="form-horizontal">{% csrf_token %}
-    	<div class="form-group">
-        {{ form|crispy }}
-        <button type="submit" class="save btn btn-default">Save</button>
+    	
+    		
+
+        	{{ form|crispy }}
+        <button type="submit" class="btn btn-primary btn-lg">Save</button>
     </form>
+
 </div>
-</div>
 
-{% endblock %}
+    
 
-
+{% endblock content %}

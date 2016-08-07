@@ -3,33 +3,77 @@
 
 <html>
     <head>
-        <title>Django Girls blog</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-        <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-        
+      <title>{% block title %} Person {% endblock title %}</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <link rel="stylesheet" type="text/css" href="../../static/css/bootstrap.min.css">
         <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+        
+
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css">
+      
     </head>
-    <body>
-        
-        
-        
-        <div class="page-header">
+<body>
+    <div class="jumbotron">
+    <div class="content container">
+            {% include "navbar.html" %}
 
-        <a href="{% url 'person_new' %}" class="top-menu">
 
-            <span class="glyphicon glyphicon-plus"></span></a>
-            
-            <h4><a href="/">{% include "navbar.html" %}</a></h4>
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h3 class="panel-title">
+      {% block heading %} Add Person Details {% endblock heading %}
+     
+    </h3>
+  </div>
+<div class="alert alert-dismissible alert-warning">
+
+  <div class="panel-body">
+
+    
+        
+<div class="row">
+  <div class="col-md-6">
+ {% block content %}
+    
+{% endblock content %}
+  </div>
+
+
+
+
+
+
+  </div>
+</div>
+   
+
+   
+
         </div>
-        <div class="content container">
-            <div class="row">
-                <div class="col-md-8">
-                    {% block content %}
-                    {% endblock %}
-                </div>
-            </div>
-        </div>
+      
+
+
+    </div>
+ 
+
+
+
+
+
+</div>
+
+   </div> 
+  </div>
+  
+</div>
     </body>
-</html>
+    
+    </html>
+     <script src="../../static/js/juery.js"></script>  
+       <script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+       <script src="../../static/js/compressed.js"></script>     
+    
+        
+ 
